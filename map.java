@@ -156,9 +156,14 @@ comparator()		// returns NULL
 
 
 
-TreeMap	is a child of NavigableMap, Red-Black Tree underlying data structure, Sorting 			order based on KEYs, Insertion Order is NOT preserved, Duplicate KEYs are 			NOT allowed, however VALUES can be duplicated,
-		When using Comparable, ALL KEYS MUST BE Homogeneous, and All KEYS 			Must BE Comparable. When using Comparator Heterogeneous KEYS are 			allowed.
-		Null is OK to insert as a KEY as long as TreeMap is empty, however after 				Inserting Null, we can NOT insert anything else. NPException thrown. 
+TreeMap	is a child of NavigableMap, Red-Black Tree underlying data structure, Sorting 
+		order based on KEYs, Insertion Order is NOT preserved, Duplicate KEYs are 
+		NOT allowed, however VALUES can be duplicated,
+		When using Comparable, ALL KEYS MUST BE Homogeneous, and All KEYS
+		Must BE Comparable. When using Comparator Heterogeneous KEYS are
+		allowed.
+		Null is OK to insert as a KEY as long as TreeMap is empty, however after
+		Inserting Null, we can NOT insert anything else. NPException thrown. 
 		From JAVA 1.7 NULL insertion is NOT allowed for Keys.
 
 TreeMap Constructors
@@ -176,7 +181,7 @@ class Test {
 		m.put(30, "ZZZ");
 		m.put(40, 106);
 		//System.out.println(m);		//{10=XXX, 20=AAA, 30=ZZZ, 40=106} DEf. Sorting Order.
-		S.o.u.t(m);				// {  40=106, 30=ZZZ, 20 = AAA, 10 = XXX }
+		System.out.println(m);			// {40=106, 30=ZZZ, 20 = AAA, 10 = XXX }
 	}
 }
 class MyComparator implements Comparator {
