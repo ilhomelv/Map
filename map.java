@@ -34,7 +34,7 @@ HashMap is a child of Map, underlying data structure is HashTable
 	insertion order Not preserved and its based on Hash codes of keys, 
 	Duplicate Keys are NOT allowed, Duplicate values OK, Heterogeneous OK,
 	Null is OK for keys once, for values infinite, implements Serializable and Cloneable.
-	Great for Searching operations
+	Great for Search operations. In HashMap JVM uses equals() method for comparison keys.
 
 HashMap Constructors
 HashMap m =new HashMap(); 	//default init capacity 16, fill ratio 0.75
@@ -91,6 +91,21 @@ HashMap				VS	LinkedHashMap
 Data structure is HashTable		Data structure LinkedList+HashTable (Hybrid Mixed )
 Insertion order Not preserved		Insertion Order Preserved
 Based on HashCode of keys		
+
+
+IdentityHashMap	is a child of Map, very similar to HashMap, including Methods n 					Constructors, except the following:  In IdentityHashMap JVM internally 				uses (==), in HashMap JVM uses equals() for comparison keys.
+
+Remember: 	(==) object reference comparison, equals() object content comparison
+Rule: 		When the Keys are equal, then Values will be replaces.
+example:
+HashMap m =new HashMap();
+//IdentityHashMap m = new IdentityHashMap();
+Integer i1 = new Integer(10);
+Integer i2 = new Integer(10);
+m.put(i1, “Peter”);
+m.put(i2, “Kate”);
+S.o.u.t(m);		//{ 10 = Kate}  value: Peter was replaced with Kate, as Keys are equal.
+//S.o.u.t(m);		//IdentityHashMap output be {10=Peter, 10=Kate}
 
 
 
