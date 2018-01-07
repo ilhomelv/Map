@@ -101,8 +101,8 @@ IdentityHashMap
 Remember: 	(==) object reference comparison, equals() object content comparison
 Rule: 		When the Keys are equal, then Values will be replaces.
 example:
-HashMap m =new HashMap();
-//IdentityHashMap m = new IdentityHashMap();
+HashMap m =new HashMap();			//JVM uses equals()
+//IdentityHashMap m = new IdentityHashMap();	//JVM uses  ==
 Integer i1 = new Integer(10);
 Integer i2 = new Integer(10);
 m.put(i1, “Peter”);
