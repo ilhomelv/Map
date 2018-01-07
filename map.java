@@ -135,4 +135,28 @@ class Temp {
 }
 
 
+
+SortedMap interface	
+		is a child of Map, Used to represent group of key-value pairs according to
+		some sorting order by KEYs, sorting based on only KEYs, not Values.
+
+SortedMap methods
+Object firstKey();				Object lastKey()
+SortedMap headMap(Object key);		SortedMap tailMap(Object key)
+SortedMap subMap(Obj key1, Obj key2);	Comparator comparator()
+
+example:   Given the following: 101 A, 103 B, 104 C, 107 D, 125 E, 136 F.
+firstKey()		// 101
+lastKey()		// 136
+headMap(107)		// {101=A, 103=B, 104=C}
+tailMap(107)		// {107=D, 125=E, 136=F}
+subMap(103,125)	// {103=B, 104=C, 107=D}
+comparator()		// returns NULL
+
+
+
+
+
+
+
 */
