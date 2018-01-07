@@ -155,6 +155,41 @@ comparator()		// returns NULL
 
 
 
+NavigableMap interface is a child of SortedMap, 
+			SortedMap interface is a child of Map.
+
+NavigableMap Methods
+floorKey(e)  returns highest element which is <= e
+higherKey(e)  returns lowest element which is < e
+ceilingKey(e)  returns lowest element which is >= e
+higherKey(e) returns lowest element which is > e
+pollFirstEntry()  remove and return first element
+pollLastEntry() remove and return last element
+descendingMap() returns NavigableSet in reverse order
+
+example:
+class DemoNavigableMap {
+   public static void main(String[] args) {
+  	TreeMap<String, String> t = new TreeMap<String, String>();
+	t.put(“b”,”banana”);
+	t.put(“c”, “cat”);
+	t.put(“a”, “apple”); 
+	t.put(“d”, “dog”);
+	t.put(“g”, “gun”);
+	System.out.print(t);			//{a=apple, b=banana, c=cat, d=dog, g=gun}
+	System.out.print(t.ceilingKey(“c”));	//c
+	System.out.print(t.higherKey(“e”));	//g
+	System.out.print(t.floorKey(“e”));	//d
+	System.out.print(t.lowerKey(“e”));	//d
+	System.out.print(t.pollFirstEntry());	//a=apple
+	System.out.print(t.pollastEntry());	//g=gun
+	System.out.print(t.descendingMap()); //{d=dog, c=cat, b=banana}
+	System.out.print(t);			//{b=banana, c=cat, d=dog}
+  }
+}
+
+
+
 
 TreeMap	is a child of NavigableMap, Red-Black Tree underlying data structure, Sorting 
 		order based on KEYs, Insertion Order is NOT preserved, Duplicate KEYs are 
