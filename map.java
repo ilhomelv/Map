@@ -192,6 +192,54 @@ class MyComparator implements Comparator {
 }
 
 
+HashTable Class	is a child of Map, underlying data structure is itself, insertion order Not
+preserved under its based on hashCode of KEYS, Duplicate keys NOT allowed.
+		Heterogeneous objects are allowed for KEYS.
+		NULL insertion not allowed for KEYS and VALUES.
+		implements Serializable and Cloneable, All methods are Synchronized,
+		Thread Safe, great for Search operation	
+
+HashTable Constructors
+HashTable h = new HashTable();		//def.init. cap is 11, fill ratio 0.75
+HashTable h = new HashTable(int initCapacity);
+HashTable h = new HashTable(int initCapacity, float fillRatio);
+HashTable h = new HashTable(Map m);
+
+example: 
+class DemoHashTable {
+   public static void main(String[] args) {
+	HashTable h = new HashTable();
+	h.put(new Temp(5), ”A”);	
+	h.put(new Temp(2), ”B”);	
+	h.put(new Temp(6), ”C”);	
+	h.put(new Temp(15), ”D”);	
+	h.put(new Temp(23), ”E”);	
+	h.put(new Temp(16), ”F”);	
+	//h.put(“David”, null);			//NPException
+	S.o.u.t(h);				// {6=C, 16=F, 5=A, 15=D, 2=B, 23=E}
+   }
+}
+class Temp	{
+	int i;
+	Temp(int i); {
+		this.i = i;	
+	}
+	public int hashCode() {   return i;  }
+	public String toString() {  return i + ” ”;   }
+}		
+//output:		23=E	2=B		15=D		5=A, 16=F	6=C
+//index: 	0	1	2	3	4		5		6
+
+Above example HashTable output be {6=C, 16=F, 5=A, 15=D, 2=B, 23=E}, 
+(5)”A” insertion index be at 5,
+(2)“B” insertion index be at 2,
+(15)“D” HashTable’s default initial capacity is 11, and Our Key is 15, 
+When The Key is Larger than Initial Capacity 11, then  JVM uses Default formula for insertion:
+KEY % Default init. capacity (11) = Insertion Index.
+(23)”E” so 23%11=1  Key 23 % 11 initial capacity = remainder 1, so insertion index at 1
+(15)”D” so 15%11=4  Key 15 % 11 initial capacity = remainder 4, so insertion index at 4
+JVM output be Elements from Top Index to Bottom index, from Right to Left.
+
 
 
 */
