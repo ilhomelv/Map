@@ -244,4 +244,41 @@ JVM output be Elements from Top Index to Bottom index, from Right to Left.
 
 
 
+Properties	is a child of HashTable, Data which changes frequently like username, password,
+		mail id, mobile number etc. are saved into Property file.
+
+Properties p = new Properties();	Key and Value must be String Type
+
+Properties Methods	
+String getProperty(String name)
+String setProperty(String oldName, String newValue)
+Enumeration propertyNames()
+void load(InputStream is) 		//load properties file into java properties object
+void store(OutputStream os, String comment)  //store properties from java properties object 
+							//into properties file
+example:
+Properties p = new Properties();
+FileInputStream fis = new FileInputStream(“abc.properties”);	//file name
+p.load(fis);				//loads properties into java object
+S.o.u.t(p);				// { user=Scott pwd=tiger vine=9999 }
+
+String s = p.getProperty("vine”);
+S.o.u.t(s);				//9999
+
+p.setProperty(“nap”,”8888”);
+FileOutputStream fos = new FileOutputStream(“abc.properties”);
+p.store(fos, “Updated by me”);
+abc.properties file contains:	user=Scott pwd=tiger vine=9999
+abc.properties file changes:	#Updated by me nap 8888  user=Scott pwd=tiger vine=9999
+
+
+
+
+
+
+
+
+
+
+
 */
