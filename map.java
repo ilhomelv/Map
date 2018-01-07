@@ -74,6 +74,11 @@ for (Map.Entry<Integer, String> entry : map.entrySet()) {
 	System.out.print(entry.getKey()+” : "+entry.getValue() + "<br>");
 }
 
+HashMap				VS	HashTable
+Not synchronized - Not Thread safe	Synchronized - Thread safe
+NULL key OK once, NULL value OK		NULL key and NULL value NOT allowed
+
+
 
 
 */
