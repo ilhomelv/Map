@@ -116,6 +116,7 @@ WeakHashMap	is a child of Map, when garbage collection is called and if Object d
 	is associated with WeakHashMap.
 example:	Demo WeakHashMap gets destroyed by Garbage Collector
 class Demo {
+   p.s.v.main(String[] args) {
 	HashMap m = new HashMap();
 	//WeakHashMap m = new WeakHashMap();
 	Temp t = new Temp();
@@ -126,6 +127,8 @@ class Demo {
 	Thread.sleep(5000);
 	S.o.u.t(m);			// {temp=David }
 	//S.o.u.t(m);			// {   }  garbage collector destroys the class object temp
+  }
+}
 class Temp {
 	public String toString()  {  return “temp”  }
 	public void finalize()	{   S.o.u.t (“Finalize is called”)  }
