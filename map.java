@@ -208,7 +208,9 @@ HashTable h = new HashTable(Map m);
 example: 
 class DemoHashTable {
    public static void main(String[] args) {
-	HashTable h = new HashTable();
+	HashTable h = new HashTable();		//Def init cap is 11
+	//HashTable h = new HashTable(25);	//init. cap is 25 	
+
 	h.put(new Temp(5), ”A”);	
 	h.put(new Temp(2), ”B”);	
 	h.put(new Temp(6), ”C”);	
