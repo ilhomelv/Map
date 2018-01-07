@@ -78,6 +78,11 @@ HashMap				VS	HashTable
 Not synchronized - Not Thread safe	Synchronized - Thread safe
 NULL key OK once, NULL value OK		NULL key and NULL value NOT allowed
 
+How to get synchronized version of HashMap object: 
+HashMap m = new HashMap();		//m is non synchronized
+Map m1 = Collections.synchronizedMap(m);//Collections class contain this method which 
+					//returns synchronized result of HashMap m1;
+
 
 
 
