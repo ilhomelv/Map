@@ -111,5 +111,25 @@ S.o.u.t(m);		//{ 10 = Kate}  value: Peter was replaced with Kate, as Keys are eq
 //S.o.u.t(m);		//IdentityHashMap output be {10=Peter, 10=Kate} i1 == i2 false
 
 
+WeakHashMap	is a child of Map, when garbage collection is called and if Object does not 
+	contain any references, then it is eligible for Garbage collection even thou object 
+	is associated with WeakHashMap.
+example:	Demo WeakHashMap gets destroyed by Garbage Collector
+class Demo {
+	HashMap m = new HashMap();
+	//WeakHashMap m = new WeakHashMap();
+	Temp t = new Temp();
+	m.put( t, ”David” );
+	S.o.u.t(m);			// {temp=David }
+	t=null;
+	System.gc();
+	Thread.sleep(5000);
+	S.o.u.t(m);			// {temp=David }
+	//S.o.u.t(m);			// {   }  garbage collector destroys the class object temp
+class Temp {
+	public String toString()  {  return “temp”  }
+	public void finalize()	{   S.o.u.t (“Finalize is called”)  }
+}
+
 
 */
