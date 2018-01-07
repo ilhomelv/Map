@@ -83,6 +83,14 @@ HashMap m = new HashMap();		//m is non synchronized
 Map m1 = Collections.synchronizedMap(m);//Collections class contain this method which 
 					//returns synchronized result of HashMap m1;
 
+LinkedHashMap	is a child of hashMap, very similar to HashMap including Methods and 
+		Constructors, except the following: Insertion order is Preserved, and
+		Underlying data structure is a combination of LinkedList+HashTable, 
+
+HashMap				VS	LinkedHashMap
+Data structure is HashTable		Data structure LinkedList+HashTable (Hybrid Mixed )
+Insertion order Not preserved		Insertion Order Preserved
+Based on HashCode of keys		
 
 
 
