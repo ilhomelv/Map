@@ -93,7 +93,10 @@ Insertion order Not preserved		Insertion Order Preserved
 Based on HashCode of keys		
 
 
-IdentityHashMap	is a child of Map, very similar to HashMap, including Methods n 					Constructors, except the following:  In IdentityHashMap JVM internally 				uses (==), in HashMap JVM uses equals() for comparison keys.
+IdentityHashMap	
+	is a child of Map, very similar to HashMap, including Methods n 
+	Constructors, except the following:  In IdentityHashMap JVM internally 
+	uses (==), in HashMap JVM uses equals() for comparison keys.
 
 Remember: 	(==) object reference comparison, equals() object content comparison
 Rule: 		When the Keys are equal, then Values will be replaces.
@@ -105,7 +108,7 @@ Integer i2 = new Integer(10);
 m.put(i1, “Peter”);
 m.put(i2, “Kate”);
 S.o.u.t(m);		//{ 10 = Kate}  value: Peter was replaced with Kate, as Keys are equal.
-//S.o.u.t(m);		//IdentityHashMap output be {10=Peter, 10=Kate}
+//S.o.u.t(m);		//IdentityHashMap output be {10=Peter, 10=Kate} i1 == i2 false
 
 
 
